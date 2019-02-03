@@ -7,5 +7,5 @@ pub struct Number {
 
 #[test]
 fn works() {
-    let num = Number::builder();
+    let num_builder = Number::builder();
 }
