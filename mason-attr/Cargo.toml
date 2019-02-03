@@ -1,8 +1,11 @@
 [package]
-name = "mason"
+name = "mason-attr"
 version = "0.1.0"
 authors = ["Geoff Shannon <geoffpshannon@gmail.com>"]
 edition = "2018"
 
+[lib]
+proc-macro = true
+
 [dependencies]
-proc-macro2 = "0.4"
+mason = { path = ".." }
