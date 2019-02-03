@@ -1,19 +1,13 @@
-use proc_macro2;
+extern crate proc_macro;
 
-pub fn generate_builder(
-    attr: impl Into<proc_macro2::TokenStream>,
-    input: impl Into<proc_macro2::TokenStream>,
-) -> proc_macro2::TokenStream {
-    let _attr = attr.into();
-    let input = input.into();
+use proc_macro::TokenStream;
+use quote::quote;
+use syn::{parse_macro_input, DeriveInput};
 
-    input
-}
+#[proc_macro_derive(Builder)]
+pub fn generate_builder(input: TokenStream) -> TokenStream {
+    let input = parse_macro_input!(input as DeriveInput);
+    let expanded = quote! {};
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
+    TokenStream::from(expanded)
 }

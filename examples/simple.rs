@@ -1,6 +1,7 @@
 use mason::generate_builder;
 
-#[generate_builder(CommandBuilder)]
+#[derive(Builder)]
+#[builder(CommandBuilder)]
 pub struct Command {
     #[builder(entrypoint, into, required)]
     program: String,
